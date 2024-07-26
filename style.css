@@ -120,6 +120,7 @@ body {
 
 .btn-box a:hover {
   color: #00abf0;
+  
 }
 
 .btn-box a:nth-child(2) {
@@ -157,6 +158,7 @@ body {
   width: 100px;
   display: flex;
   justify-content: space-evenly;
+  
 }
 
 .home-sci a {
@@ -173,6 +175,7 @@ body {
   color: #00abf0;
   text-decoration: none;
   transition: .5s;
+  overflow: hidden;
 }
 
 .home-sci a:hover {
