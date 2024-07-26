@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #081b29;
+  color: #ededed;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+  font-size: 25px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+
+.navbar a.active {
+  color: #00abf0;
+}
+
+.navbar a:hover {
+  color: #00abf0;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.home-content {
+  max-width: 700px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.home-content.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.home-content h1 {
+  max-width: 700px;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #00abf0;
+}
+
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+}
+
+.home-content .btn-box {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+
+.btn-box a {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  width: 150px;
+  height: 100%;
+  background: #00abf0;
+  border: 2px solid #00abf0;
+  border-radius: 8px;
+  font-size: 19px;
+  color: #081b29;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.btn-box a:hover {
+  color: #00abf0;
+}
+
+.btn-box a:nth-child(2) {
+  background: transparent;
+  color: #00abf0;
+}
+.btn-box a:nth-child(2):hover {
+  color: #081b29;
+}
+
+.btn-box a:nth-child(2)::before {
+  background: #00abf0;
+}
+
+.btn-box a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #081b29;
+  z-index: -1;
+  transition: .5s;
+}
+
+.btn-box a:hover::before {
+  width: 100%;
+}
+
+.home-sci {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.home-sci a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #00abf0;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #00abf0;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.home-sci a:hover {
+  color: #081b29;
+  background: #00abf0;
+}
+
+.home-sci a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #00abf0;
+  z-index: -1;
+  transition: .5s;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+
+.experience {
+  background: #081b29;
+  padding: 60px 10%;
+  color: #ededed;
+  text-align: center;
+}
+
+.experience-content {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.experience-content.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.experience-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: rgb(100, 175, 175);
+}
+
+.experience-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.experience-card {
+  background: #1c2a38;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card.sigmath {
+  max-width: 350px; /* Make SigMath card larger */
+}
+
+.experience-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(100, 175, 175);
+  margin-bottom: 10px;
+}
+
+.experience-card i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: rgb(100, 175, 175);
+}
+
+.experience-card p {
+  font-size: 16px;
+  color: #ededed;
+}
+
+.experience-card .details {
+  display: none;
+  margin-top: 10px;
+}
+
+.experience-card.expanded .details {
+  display: block;
+}
+
+.experience-card.expanded {
+  max-width: 100%;
+  width: auto;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.education {
+  background: #081b29;
+  padding: 60px 10%;
+  color: #ededed;
+  text-align: center;
+}
+
+.education-content {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.education-content.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.education-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: rgb(100, 175, 175);
+}
+
+.education-card {
+  background: #1c2a38;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 700px; /* Make the card wider */
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(100, 175, 175);
+  margin-bottom: 10px;
+}
+
+.education-card i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: rgb(100, 175, 175);
+}
+
+.education-card p {
+  font-size: 16px;
+  color: #ededed;
+  margin-bottom: 10px;
+}
+
+.education-card .additional-details {
+  display: none;
+  margin-top: 10px;
+}
+
+.education-card.expanded .additional-details {
+  display: block;
+}
+
+.education-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.skills-icons a {
+  color: rgb(100, 175, 175);
+  font-size: 50px;
+  transition: transform 0.3s;
+}
+
+.skills-icons a:hover {
+  transform: scale(1.2);
+}
